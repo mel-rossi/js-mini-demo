@@ -3,43 +3,62 @@
 
   <head>
     <meta charset="UTF-8">
+
     <title>JavaScript Mini Demo</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
   </head>
 
   <body>
-    <h1>JavaScript Mini Demo</h1>
 
-    <!-- Date Section -->
-    <section class="dateSection">
-      <h2>Date Display</h2>
-
-      <p id="dateOutput">
-        Results will appear here
-      </p>
-    </section>
-
-    <!-- Number Conversion Section -->
-    <section class="numberSection">
-      <h2>Number Conversion Tests</h2>
+    <header role="banner"> 
+      <h1>JavaScript Mini Demo</h1>
       
-      <div id="numberConversionOutput">
-        Results will appear here
-      </div>
-    </section>
+      <p>This is a simple demonstration of JavaScript functionality in the browser.</p>
 
-    <!-- Math and Formatting Section -->
-    <section class="mathSection">
-      <h2>Math and Number Formatting</h2>
+      <a href="https://github.com/mel-rossi/js-mini-demo">&#x24D8; Source Code</a>
+    </header>
 
-      <div id="mathOutput">
-        Results will appear here
-      </div>
-    </section>
+    <main role="main">
+      <!-- Date Section -->
+      <section class="dateSection box">
+        <h2>Date Display</h2>
 
-    <!-- Link to external JavaScript -->
-    <script src="script.js"></script>
+        <p id="dateOutput">
+          Loading date...
+        </p>
+      </section>
+
+      <!-- Number Conversion Section -->
+      <section class="numberSection box">
+        <h2>Number Conversion Tests</h2>
+        
+        <div id="numberConversionOutput">
+          Loading number conversion results...
+        </div>
+      </section>
+
+      <!-- Math and Formatting Section -->
+      <section class="mathSection box">
+        <h2>Math and Number Formatting</h2>
+
+        <h3>Price Calculator</h3>
+
+        <div id="mathOutput">
+          Loading math and formatting results...
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <pre>Copyright © 2026 Mel Rossi Rodrigues. All rights reserved.</pre>
+    </footer>
 
   </body>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
 
 </html>
 

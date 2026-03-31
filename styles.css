@@ -1,0 +1,86 @@
+/*
+	Color Scheme: 
+		WhiteSmoke
+		DarkSlateGray
+		LightSlateBlue
+		GhostWhite
+		Azure
+*/
+
+html, body { 
+	background: WhiteSmoke;
+	color: DarkSlateGray;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p { 
+	margin: 10px 0; 
+	padding: 0;
+}
+
+header, footer { 
+	color: WhiteSmoke;
+	background: DarkSlateGray;
+
+	text-align: center;
+	padding: 10px;
+}
+
+body { 
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main { 
+	flex: 1;
+}
+
+aside { 
+	text-indent: 20px;
+}
+
+a { 
+	color: inherit;
+	font-size: 0.8em;
+	text-decoration: none;
+
+	border: 1px solid WhiteSmoke;
+	border-radius: 3px;
+	padding: 2px 5px;
+}
+
+a:hover { 
+	color: LightSteelBlue;
+	border-color: LightSteelBlue;
+}
+
+.box { 
+	margin: 20px auto;
+	padding: 20px;
+	border: 2px solid DarkSlateGray;
+	border-radius: 5px;
+	width: 80%;
+	max-width: 650px;
+
+	background: GhostWhite;
+}
+
+.sbox { 
+	margin: 10px 0;
+	padding: 5px;
+	border: 1px solid DarkSlateGray;
+	border-radius: 5px;
+	width: 80%;
+	max-width: 200px;
+
+	background-color: Azure;
+}
+
+.sbox:hover { 
+	color: WhiteSmoke;
+	background-color: DarkSlateGray;
+}

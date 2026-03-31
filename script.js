@@ -19,7 +19,9 @@ if (day < 10) {
 var year = date.getFullYear();
 
 // Format Date
-var dateString = "Today is " + month + "/" + day + "/" + year;
+var dateString = "<p>"
+                    + "Today is " + "<span class='sbox'>" + month + "/" + day + "/" + year + "</span>" + 
+                 "</p>";
 
 // Display Result
 document.getElementById("dateOutput").innerHTML = dateString;
@@ -53,20 +55,31 @@ var isDecNumInt = Number.isInteger(decNum);
 var isNonNumInt = Number.isInteger(nonNum);
 
 // Format results for each variable
-var result1 = "Original: '" + numStr1 + "' -> Converted: " + num1 + " -> isNaN: " + isNum1NaN + " -> isInteger: " + isNum1Int;
-var result2 = "Original: '" + numStr2 + "' -> Converted: " + num2 + " -> isNaN: " + isNum2NaN + " -> isInteger: " + isNum2Int;
-var result3 = "Original: '" + decStr + "' -> Converted: " + decNum + " -> isNaN: " + isDecNumNaN + " -> isInteger: " + isDecNumInt;
-var result4 = "Original: '" + nonNumStr + "' -> Converted: " + nonNum + " -> isNaN: " + isNonNumNaN + " -> isInteger: " + isNonNumInt;
+var result1 = "<p>" + 
+                "Original: '" + numStr1 + "' -> Converted: " + num1 + " -> isNaN: " + isNum1NaN + " -> isInteger: " + isNum1Int + 
+              "</p>";
 
-// Conditional Message for non-numeric string
-if (isNonNumNaN) {
-  result4 += " -> This value cannot be converted to a number.";
-} else {
-  result4 += " -> This value was successfully converted to a number.";
-}
+var result2 = "<p>" + 
+                "Original: '" + numStr2 + "' -> Converted: " + num2 + " -> isNaN: " + isNum2NaN + " -> isInteger: " + isNum2Int + 
+              "</p>";
+
+var result3 = "<p>" + 
+                "Original: '" + decStr + "' -> Converted: " + decNum + " -> isNaN: " + isDecNumNaN + " -> isInteger: " + isDecNumInt + 
+              "</p>";
+
+var result4 = "<p>" + 
+                "Original: '" + nonNumStr + "' -> Converted: " + nonNum + " -> isNaN: " + isNonNumNaN + " -> isInteger: " + isNonNumInt + 
+              "</p>";
 
 // Combine results into one string variable 
-var finalResult = result1 + "<br>" + result2 + "<br>" + result3 + "<br>" + result4;
+var finalResult = result1 + result2 + result3 + result4;
+
+// Conditional Message for non-numeric string
+if (isNonNumNaN) { 
+  finalResult += "<aside> -> This value cannot be converted to a number.</aside>";
+} else {
+  finalResult += "<aside> -> This value was successfully converted to a number.</aside>";
+}
 
 // Display Final Result
 document.getElementById("numberConversionOutput").innerHTML = finalResult;
@@ -91,25 +104,31 @@ var total = subtotal + taxAmount + shippingCost;
 var formattedTotal = total.toFixed(2);
 
 // Build result string
-var priceResult = "Price: $" + price1.toLocaleString() + "<br>" +
-                  "Tax Rate: " + (taxRate * 100).toLocaleString() + "%<br>" +
-                  "Shipping Cost: $" + shippingCost.toLocaleString() + "<br>";
+var priceResult = "<p class='sbox'>" + 
+                    "Price: $" + price1.toLocaleString() + "<br>" +
+                    "Tax Rate: " + (taxRate * 100).toLocaleString() + "%<br>" +
+                    "Shipping Cost: $" + shippingCost.toLocaleString() + "<br>" +
+                  "</p>";
                   
-// Conditional message if subtotal is more than $25
-if (subtotal > 25) {
-    priceResult += "<br><strong>Note:</strong> Subtotal exceeds $25. Eligible for free shipping!<br><br>";
+if (subtotal > 25) { // Conditional message if subtotal is more than $25
+    priceResult += "<aside>" + 
+                        "<strong>Note:</strong> Subtotal exceeds $25. Eligible for free shipping!" + 
+                    "</aside>";
 
     total -= shippingCost; // Waive shipping cost
     formattedTotal = total.toFixed(2); // Reformat total after removing shipping cost
 } 
-
 else {
-    priceResult += "<br><strong>Note:</strong> Subtotal does not exceed $25. Not eligible for free shipping.<br><br>";
+    priceResult += "<aside>" + 
+                        "<strong>Note:</strong> Subtotal does not exceed $25. Not eligible for free shipping." + 
+                    "</aside>";
 }
 
-priceResult += "Subtotal: $" + subtotal.toLocaleString() + "<br>" +
-                  "Tax Amount: $" + taxAmount.toLocaleString() + "<br>" +
-                  "Total: $" + formattedTotal;
+priceResult += "<p class='sbox'>" + 
+                    "Subtotal: $" + subtotal.toLocaleString() + "<br>" +
+                    "Tax Amount: $" + taxAmount.toLocaleString() + "<br>" +
+                    "Total: $" + formattedTotal +
+                "</p>";
 
 // Display result
 document.getElementById("mathOutput").innerHTML = priceResult;
