@@ -2,7 +2,7 @@
 
 COMP 484 - HW 9: JavaScript Built-In Objects 
 
-Github Pages Link
+[Github Pages Link](https://mel-rossi.github.io/js-mini-demo/)
 
 [Finished Webpage Screenshot](screenshot.png)
 
